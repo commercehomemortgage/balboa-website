@@ -1,0 +1,54 @@
+.sidebar {
+	.contact-card{
+		h4,
+		a,
+		p {
+			font-weight: 100;
+		}
+
+		h4,
+		a {
+			color: #608E95;
+		}
+		h4,
+		a,
+		p{
+			font-size: 18px;
+		}
+		p {
+			line-height: 24px;
+		}
+		.email {
+			color: #000;
+			font-size: 14px;
+			padding: 0;
+			a {
+				display: inline;
+				color: #000;
+				font-size: 14px;
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+.insurance-footer {
+	margin: 30px auto 50px auto;
+	h2 {
+		font-size: 20px;
+		color: #01506a;
+		font-weight: 400;
+	}
+	hr {
+		height: 5px;
+		background-color: #608E95;
+	}
+	p {
+		color: #608E95;
+		font-size: 16px;
+	}
+}
+
+.insurance-header {
+	text-transform: uppercase !important;
+}

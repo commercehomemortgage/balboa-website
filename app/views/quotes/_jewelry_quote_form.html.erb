@@ -1,0 +1,38 @@
+<% content_for :quote_form do %>
+
+  <%= simple_form_for @quote, as: :quote, url: quotes_path, html: { "ng-cloak" => true, "ng-controller" => "JewelryQuoteController", "ng-init" => "init(#{@quote.to_json(include: {valuable_items: { methods: [:errors] }})})" } do |f| %>
+    <%= f.input :type, as: :hidden %>
+    <%= f.input :first_name, label: false %>
+    <%= f.input :last_name, label: false %>
+    <%= f.input :phone, label: false %>
+    <%= f.input :email, label: false %>
+
+    <fieldset>
+      <label>Valuable Items</label>
+      <select ng-model="valuable_items_count">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+      <div ng-repeat="valuable_item in quote.valuable_items">
+        <hr>
+        Item #{{ $index + 1 }}
+        <div class="input required">
+          <input class="string required" placeholder="Zip Code" type="text" name="quote[valuable_items_attributes][{{$index}}][zip_code]" id="quote_valuable_item_{{$index}}_zip_code" ng-model="valuable_item.zip_code">
+          <span class="error" ng-show="valuable_item.errors.zip_code">{{ valuable_item.errors.zip_code[0] }}</span>
+        </div>
+        <div class="input required">
+          <input class="string required" placeholder="Estimated Value" type="text" name="quote[valuable_items_attributes][{{$index}}][estimated_value]" id="quote_valuable_item_{{$index}}_estimated_value" ng-model="valuable_item.estimated_value">
+          <span class="error" ng-show="valuable_item.errors.estimated_value">{{ valuable_item.errors.estimated_value[0] }}</span>
+        </div>
+      </div>
+    </fieldset>
+
+    <%= render "quotes/additional_info_and_final_inputs", f: f %>
+
+    <%= f.button :submit, "Get Quote", class: "" %>
+  <% end %>
+<% end %>

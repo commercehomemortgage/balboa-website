@@ -1,0 +1,14 @@
+.sidebar{
+	&--content{
+		@include pad(20px);
+		@include clearfix;
+		border: 1px solid $brand-color-light;
+		p {
+			font-size: 12px;
+		}	
+	}
+	&--light {
+	    font-size: 18px;
+	    font-weight: 100;
+	}
+}

@@ -1,0 +1,130 @@
+// html, body {
+//  height: 100%;
+// }
+
+.footer-2 {
+  padding: 16px 0px;
+  @include media($large-screen) {
+      height: 70px;
+  }
+}
+
+.footer-2 {
+
+  background: $footer-background;
+  padding-top: 16px;
+  width: 100%;
+  display: block;
+
+  .footer-wrapper {
+    @include outer-container;
+  }
+  .footer-logo {
+    margin-right: 1em;
+    margin-bottom: 1em;
+    text-align: center;
+    padding: 20px;
+    @include media($large-screen) {
+      float: left;
+      padding: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  .footer-logo img {
+    height: 75px;    
+     @include media($large-screen) {
+      height: 2.6em;
+    }
+  } 
+
+  .licensing {
+    font-weight: lighter;
+    color:#fff;
+    font-size: 10px;
+    text-align: center;
+    @include media($large-screen) {
+      text-align: left;
+    }
+  }
+  ul {
+    line-height: 44px;
+    margin: 0 0 1em 0;
+    padding: 0;
+    font-weight: bold;
+
+    
+    @include media($large-screen) {
+      float: left;
+      // line-height: 1.8em;
+      margin-left: 1em;
+      margin-bottom: 0;
+    }
+  }
+
+  ul li {
+    list-style: none;
+    padding-right: 1em;
+    
+    @include media($large-screen) {
+      display: inline;
+      text-align: left;
+    }
+  }
+
+  ul li a {
+    color: #fff;
+    text-decoration: none;
+
+
+    &:focus,
+    &:hover {
+      color: transparentize($footer-color, 0);
+    }
+  }
+
+  .footer-secondary-links {
+    text-align: center;
+    max-width: 80%;
+    margin: 0 auto;
+    @include media($large-screen) {
+      float: right;
+    }
+
+    li {
+      font-size: 0.8em;
+    }
+
+    ul.footer-social {
+      margin: 1em 0 0 0;
+
+      @include media($large-screen) {
+        float: right;
+        margin-top: 0;
+      }
+
+      li {
+        font-size: 1em;
+        float: left;
+        line-height: 0;
+        margin: 0;
+        padding-right: 0.7em;
+
+        &:last-child {
+          padding-right: 0;
+        }
+      }
+
+      img {
+        height: 1.6em;
+        opacity: 0.7;
+        padding: 1px;
+
+        &:focus,
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

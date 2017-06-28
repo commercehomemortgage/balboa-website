@@ -1,0 +1,100 @@
+.contact-btn {
+	display: block;
+	position: relative;
+	@include clearfix;
+}
+
+.whoweare{
+	.intro article{
+		@include outer-container;
+		h2 {
+			font-weight: 400;
+		}
+		p {
+			color: #2d2d2d;
+		}
+	}
+	.contact-card{
+		color: $brand-color;
+		margin-top: 15px;
+		h4,
+		a {
+			font-size: 16px;
+			font-weight: 100;
+		}
+		.email {
+			color: #000;
+			font-size: 14px;
+			text-decoration: underline;
+			a {
+				display: inline;
+				color: #000;
+				font-size: 14px;
+			}
+		}
+	}
+	.team {
+		h2 {
+			font-weight: 400;
+			font-size: 30px;
+			font-family: $styled-font;
+		}
+	}
+	.team-layout li {
+		img {
+			width: 100%;
+		}
+		.team-title {
+			padding: 10px 0px 0px 0px;
+			display: block;
+			color: $brand-color;
+		}
+	}
+	.features {
+		h2 {
+			font-weight: 400;
+			font-size: 30px;
+			font-family: $styled-font;
+			span {
+				font-style: italic;
+			}
+		}
+		ul {
+			li {
+				h3 {
+					font-size: 22px;
+				}
+				h3,
+				p {
+					font-weight: 100;
+				}
+				p {
+					color: #686868;
+					font-size: 16px;
+				}
+			}
+		}
+	}
+	.location {
+		@include clearfix;
+		padding-top: 60px;
+		h2 {
+			font-weight: 400;
+			font-size: 30px;
+			font-family: $styled-font;
+			span {
+				font-style: italic;
+			}
+		}
+		.address {
+			color: #414345;
+			font-weight: 100;
+			font-size: 14px;
+		}
+		.contact-btn {
+			padding: 25px 0px;
+		}
+	}
+}
+
+

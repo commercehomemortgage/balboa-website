@@ -1,0 +1,523 @@
+@include media($large-screen) {
+
+
+
+	html,
+	body{
+		min-width: 100%;
+	}
+	//nav 
+
+	header.navigation {
+		position: absolute;
+	    .logo {
+		    padding-top: 8px;
+		    width: 345px;
+		}
+	}
+
+	//global
+
+	.image-gradient-dynamic {
+		.copy {
+			    padding-top: 50px;
+			h2 {
+				margin-top: 130px;
+				font-size: 60px;
+			}
+			h3 {
+				font-size: 30px;
+			}
+			p {
+				font-size: 30px;
+			}
+		}
+	}
+	.skinny_wrapper {
+		@include span-columns(8);
+		@include pad(25px);
+		&--article {
+			// width: 590px;
+			@include span-columns(8);
+			margin-right: 0;
+			float: left;
+			@include pad(36px);
+			// margin-left: 104px;
+		}
+		&--center {
+			background-color: #fff;
+			@include pad(50px);
+			@include span-columns(10);
+			@include shift(1);
+		}
+	}
+
+	.phone-nav {
+	  position: absolute;
+	  top: -50px;
+	  right: 0;
+	  a {
+		  	font-weight: 400 !important;
+		  	display: block;
+		}
+	}
+
+	.sidebar{
+		// width: 410px;
+		@include span-columns(4);
+		@include pad(25px 0px 25px 25px);
+		margin-right: 0;
+		float: left;
+	    margin-left: 15px;
+	}
+	.two-column{
+		@include omega(2n);
+		padding: 3em 0;
+		@include clearfix;
+		aside,
+		article {
+			position: relative;
+			@include clearfix;
+		}
+		aside {
+			height: 100%;
+			position: relative;
+			@include span-columns(4);
+			&.aside--skinny {
+				@include span-columns(3);
+				@include shift(0.5);
+			}
+		}
+		article {
+			@include span-columns(8);
+			&.article--skinny {
+				@include span-columns(7);
+				@include shift(0.5);
+			}
+		}
+	}
+	
+	.vertical-align-wrapper {
+		-webkit-transform-style: preserve-3d;
+		-moz-transform-style: preserve-3d;
+		transform-style: preserve-3d;
+		min-height: 430px;
+	}
+	.vertical-align-content{
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	.pull_up {
+		margin-top: -8em;
+	    margin-bottom: 30px;
+	}
+
+	// Welcome
+
+	.welcome {
+		.intro,
+		.insurance-type-slide,
+		.customer-quotes{
+			@include omega(2n);
+			@include clearfix;
+			article,
+			aside {
+				float: left;
+			}
+			aside{ 
+				h2 {
+					font-size: 55px;
+				}
+			}
+		}
+		.intro {
+			padding-top: 60px;
+			article {
+				// margin-left: 75px;
+				@include span-columns(8);
+				font-size: 20px;
+			}
+			aside{
+				// margin-left: 32px;
+				@include span-columns(4);
+			}
+		}
+		.insurance-type-slide {
+			padding-top: 60px;
+			article {
+				@include span-columns(8);
+			  .insurance-type-slide--wrapper {
+			  	// width: 673px;
+			  	width: 100%;
+			  	// height: 450px;
+			  	margin-right: 61px;
+			  	// margin-left: 32px;
+			  }
+			}
+		  aside {
+		  	font-size: 60px;
+		  	// width: 236px;
+		  	@include span-columns(4);
+		  	// @include shift(0.5);
+		  }
+		}
+		.customer-quotes {
+			padding-top: 60px;
+			article{
+				// width: 560px;
+				// margin-left:180px;
+				@include span-columns(7);
+				// @include shift(0.2);			
+			}
+			aside {
+				@include span-columns(4);
+				// margin-left: 36px;
+			}
+		}
+		.insurance-type-slide {
+			display: block;
+			article.insurance-type-slide--wrapper {
+			.insurance-type-slide--content {
+					height: 450px;
+					width: 100%;
+					position: relative;
+					display: block;
+					a {
+						background-color: $brand-color;
+						position: relative;
+						display: block;
+						width: 100%;
+						height: 100%;
+						h2 {
+							color: #fff;
+							font-size: 30px;
+							padding: 10px 15px;
+							display: inline;
+							border: 1px solid #fff;
+							z-index: 999;
+						}
+					}
+				}
+			}
+
+		}
+	}
+	#insurance-logo-group {
+		padding-top: 155px;
+	}
+  	#insurance-logo-group li {
+		margin-bottom: 0px;
+		@include span-columns(2);
+		@include omega(6n);
+		// &:first-child {
+		// 	@include shift(1);
+		// }
+	}
+
+
+
+	.sidebar--form {
+		@include clearfix;
+		.form-prompt {
+			margin-bottom: 25px;
+		}
+	  .input {
+	    @include clearfix;
+	    width: 100%;
+	    float: left;
+	    // line-height: 38px;
+	  }
+	  .quote_name_of_insured,
+	  .quote_email,
+	  .quote_city,
+	  .quote_gender {
+	    @include span-columns(2.5 of 4);
+	  }
+	  .quote_date_of_birth,
+	  .quote_phone,
+	  .quote_zipcode {
+	  	@include span-columns(1.5 of 4);
+	  }
+
+  	  .quote_height,
+	  .quote_weight{
+	  	@include span-columns(2 of 4);
+	  }
+	  	&.property,
+	  	&.condo{
+			.quote_date_of_birth,
+			.quote_email,
+			.quote_zipcode,
+			.quote_gender,
+			fieldset .quote_condo_exterior_siding,
+			fieldset .quote_condo_number_of_people_living_in_unit {
+				margin-right: 0;
+			}
+	  	}
+	  	&.life,
+	  	&.health {
+			.quote_email,
+			.quote_zipcode,
+			.quote_gender {
+				margin-right: 0;
+			}
+		}
+		&.renters,
+		&.landlord,
+		&.jewelry {
+			.quote_date_of_birth,
+			.quote_email {
+				margin-right: 0px;
+			}
+		}
+		&.auto,
+		&.motorcycle,
+		&.condo,
+		&.commercial,
+		&.life {
+			.quote_condo_number_of_units,
+			.quote_condo_exterior_siding,
+			.quote_condo_number_of_full_time_employees,
+			.quote_condo_number_of_people_living_in_unit,
+			.quote_auto_current_insurance_carrier,
+			.quote_auto_current_insurance_expires,
+			.quote_auto_rental_car,
+			.quote_auto_roadside_assistance {
+				@include span-columns(2 of 4);
+			}
+			// .quote_condo_number_of_full_time_employees,
+			// .quote_condo_number_of_units,
+			// .quote_auto_current_insurance_carrier,
+			// .quote_auto_roadside_assistance {
+			//     margin-right: 13px;
+			// }
+			.quote_auto_current_insurance_expires,
+			.quote_auto_rental_car,
+			.quote_zipcode,
+			.quote_email {
+				margin-right: 0;
+
+			}
+		}
+		&.flood,
+		&.boat {
+			.quote_email {
+				margin-right: 0;
+			}
+		}
+		&.life,
+		&.health {
+			.quote_weight{
+				margin-right: 0px;
+			}
+
+		}
+		.driver-info {
+			@include omega(2n);
+			.input {
+				// float: left;
+				// width: 165px;
+				// &:nth-child(odd){
+				// 	margin-right: 13px;
+				// }
+				@include span-columns(2 of 4);
+			}
+		}
+		.quote_boat_year,
+		.quote_boat_make,
+		.quote_boat_model,
+		.quote_boat_year_purchased,
+		.quote_boat_location_zip_code {
+			@include span-columns(2 of 4);
+		}
+		.quote_boat_make,
+		.quote_boat_year_purchased{
+			margin-right: 0px;
+		}
+	}
+	.discount,
+	.quote_commercial_type_of_insurance {
+		background: #f8f8f8;
+		background-image: none !important;
+		// overflow: hidden;
+	}
+	.discount {
+		min-height: 150px;
+	}
+	.quote_commercial_type_of_insurance {
+		min-height: 165px;
+	}	
+
+
+	#quote-slider {
+		.owl-buttons{
+			display: block !important;
+		}
+	}
+	// Who we are
+	.form--sidebar {
+		margin-top: 30px;
+	}
+
+	.whoweare {
+		.intro {
+			padding-top: 20px;
+			// margin-bottom: 50px;
+			@include clearfix;
+			// @include omega(2n);
+			// aside {
+			// 	// width: 285px;
+			// 	@include span-columns(4);
+			// 	// margin-left: 104px;
+			// 	margin-right: 0px;
+			// 	img {
+			// 		width: 100%;
+			// 	}
+			// }
+			article {
+				// width: 675px;
+				// padding-left: 60px;
+				// @include span-columns(8);
+				// margin-left: 60px;
+				h2 {
+				    font-size: 30px;
+				}
+				p {
+					font-size: 16px;
+				}
+			}
+		}
+		.team-layout {
+			@include clearfix;
+			@include span-columns(12);
+			margin-bottom: 25px;
+			li {
+				@include span-columns(3);
+				@include omega(3n);
+				margin-bottom: 25px;
+				&:first-child,
+				&:nth-child(4n) {
+					@include shift(1.5);
+				}
+			}
+		}
+		.features {
+			@include clearfix;
+			padding-top: 70px;
+			// width: 1200px;
+			margin: 0 auto;
+			ul {
+				@include clearfix;
+				li {
+					@include span-columns(4);
+				}
+			}
+		}
+		.location {
+			padding-bottom: 50px;
+			// width: 1200px;
+			margin: 0 auto;
+			@include omega(2n);
+			@include clearfix;
+			.address {
+				@include span-columns(3 of 12);
+			}
+			.contact-btn {
+				@include span-columns(2 of 12);
+				@include shift(7);
+				padding: 0px !important;
+				a {
+					// margin-left:-30px;
+					width: 100%;
+				}
+			}
+		}
+	}
+	.quotes {
+		.forms {
+			.quote_name_of_insured,
+			.quote_city {
+				@include span-columns(8);
+				margin-right: 2.35765%;
+			}
+			.quote_zipcode,
+			.quote_date_of_birth {
+				@include span-columns(4);
+				margin-right: 0px;
+			}
+			.quote_phone {
+				@include span-columns(7);
+			}
+			.quote_email {
+				@include span-columns(5);
+				margin-right: 0px;
+			}
+			.quote_property_type_of_home,
+			.quote_property_occupancy_type,
+			.quote_property_dogs_on_property,
+			.quote_property_pool_or_hot_tub {
+				@include span-columns(6);
+			}
+			.quote_property_pool_or_hot_tub {
+				@include span-columns(2 of 4);
+			}
+			.quote_property_pool_or_hot_tub,
+			.quote_property_dogs_on_property {
+				margin-right: 0px;
+			}
+			.quote_additional_info,
+			.quote_current_policy,
+			.quote_interested_in_life_insurance {
+				@include span-columns(12);
+				margin-right: 0px;
+			}
+		}
+	}
+
+	.quote-page {
+		@include clearfix;
+		&.LifeInsuranceQuote {
+			fieldset {
+				.quote_date_of_birth,
+				.quote_gender,
+				.quote_height,
+				.quote_weight {
+					@include span-columns(6 of 12);
+				}
+				.quote_gender,
+				.quote_weight {
+					margin-right: 0px;
+				}
+			}
+		}
+		&.HealthInsuranceQuote {
+			fieldset {
+				.quote_date_of_birth,
+				.quote_gender{
+					@include span-columns(6 of 12);
+				}
+				.quote_gender {
+					margin-right: 0px;
+				}
+			}
+		}
+
+	}
+}
+
+
+
+  @media screen and (max-width: 900px) and (min-width: 680px){ 
+	.team-layout {
+		// bordeR: 1px solid red;
+		@include clearfix;
+		@include span-columns(12);
+		margin-bottom: 25px;
+		li {
+			@include span-columns(6);
+			@include omega(2n);
+			// margin-bottom: 25px;
+		}
+	}
+}

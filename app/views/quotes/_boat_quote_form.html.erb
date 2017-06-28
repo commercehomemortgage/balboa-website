@@ -1,0 +1,23 @@
+<% content_for :quote_form do %>
+  <%= simple_form_for @quote, as: :quote, url: quotes_path do |f| %>
+    <%= f.input :type, as: :hidden %>
+    <%= f.input :first_name, label: false %>
+    <%= f.input :last_name, label: false %>
+    <%= f.input :phone, label: false %>
+    <%= f.input :email, label: false %>
+
+      <fieldset>
+        <legend>Watercraft #1</legend>
+        <%= f.input :boat_year, label: false %>
+        <%= f.input :boat_make, label: false %>
+        <%= f.input :boat_model, label: false %>
+        <%= f.input :boat_year_purchased, label: false %>
+        <%= f.input :boat_location_zipcode, label: false %>
+        <%= f.input :boat_usage, label: false %>
+
+      </fieldset>
+    <%= render "quotes/additional_info_and_final_inputs", f: f %>
+
+    <%= f.button :submit, "Get Quote", class: "" %>
+  <% end %>
+<% end %>

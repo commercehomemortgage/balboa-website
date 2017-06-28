@@ -1,0 +1,35 @@
+.btn {
+	text-align: center;
+	display: block;
+	margin: 0 auto;
+	font-size: 21px;
+	&--blue {
+		font-weight: 100;
+		background-color: #01506a;
+		color: #fff;
+		width: 180px;
+		text-align: center;
+		line-height: 44px;
+		padding: 0;
+		&:hover {
+			color: #fff;
+			background-color: tint(#01506a, 15%);
+		}
+	}
+	&--white {
+		text-align: left;
+		padding-left: 15px;
+		font-weight: 100;
+		background: #fff;
+		color: #608E95;
+		line-height: 44px;
+		width: 180px;
+	    background: image-url("controls/CTA_Arrow_Right-sm.png") no-repeat #fff;
+	    background-position: 88% center;
+		&:hover {
+			color: #fff;
+			background-color: tint(#01506a, 15%);
+		}
+	}
+
+}

@@ -1,0 +1,23 @@
+<% content_for :quote_form do %>
+
+  <%= simple_form_for @quote, as: :quote, url: quotes_path do |f| %>
+    <%= f.input :type, as: :hidden %>
+    <%= f.input :name_of_insured, label: false %>
+    <%= f.input :date_of_birth, label: false %>
+    <%= f.input :phone, label: false %>
+    <%= f.input :email, label: false %>
+
+    <fieldset>
+      <legend>Property Address</legend>
+      <%= f.input :street_address, label: false %>
+      <%= f.input :street_address2, label: false %>
+      <%= f.input :city, label: false %>
+      <%= f.input :zipcode, label: false %>
+    </fieldset>
+    
+
+    <%= render "quotes/additional_info_and_final_inputs.html", f: f %>
+
+    <%= f.button :submit, "Get Quote", class: "" %>
+  <% end %>
+<% end %>

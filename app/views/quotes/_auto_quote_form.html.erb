@@ -1,0 +1,130 @@
+<% content_for :quote_form do %>
+  <%= simple_form_for @quote, as: :quote, url: quotes_path, html: { "ng-cloak" => true, "ng-controller" => "AutoQuoteController", "ng-init" => "init(#{@quote.to_json(include: {drivers: { methods: [:errors] }, vehicles: { methods: [:errors] }})})" } do |f| %>
+    <%= f.input :type, as: :hidden %>
+    <%= f.input :first_name, label: false %>
+    <%= f.input :last_name, label: false %>
+    <%= f.input :street_address, label: false %>
+    <%= f.input :street_address2, label: false %>
+    <%= f.input :city, label: false %>
+    <%= f.input :zipcode, label: false %>
+    <%= f.input :phone, label: false %>
+    <%= f.input :email, label: false %>
+
+    <%= f.input :auto_current_insurance_carrier, label: false %>
+    <%= f.input :auto_current_insurance_expires, label: false %>
+    
+    <fieldset>
+      <legend>Driver Information</legend>
+      <label>Select Number of Drivers</label>
+      <select ng-model="drivers_count">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+      <div ng-repeat="driver in quote.drivers">
+        <hr>
+        Driver {{ $index + 1 }}
+        <div class="input required">
+          <input class="string required" placeholder="First Name" type="text" name="quote[drivers_attributes][{{$index}}][first_name]" id="quote_driver_{{$index}}_first_name" ng-model="driver.first_name">
+          <span class="error" ng-show="driver.errors.first_name">{{ driver.errors.first_name[0] }}</span>
+        </div>
+        <div class="input required">
+          <input class="string required" placeholder="Last Name" type="text" name="quote[drivers_attributes][{{$index}}][last_name]" id="quote_driver_{{$index}}_last_name" ng-model="driver.last_name">
+          <span class="error" ng-show="driver.errors.last_name">{{ driver.errors.last_name[0] }}</span>
+        </div>
+        <div class="input">
+          <select class="" name="quote[drivers_attributes][{{$index}}][gender]" id="quote_driver_{{$index}}_gender" ng-model="driver.gender">
+            <option value="">Gender</option>
+            <option value="M">Male</option>
+            <option value="F">Female</option>
+          </select>
+        </div>
+        <div class="input">
+          <select class="" name="quote[drivers_attributes][{{$index}}][marital_status]" id="quote_driver_{{$index}}_marital_status" ng-model="driver.marital_status">
+            <option value="">Marital Status</option>
+            <option value="Single">Single</option>
+            <option value="Married">Married</option>
+          </select>
+        </div>
+        <div class="input">
+          <input class="string required" placeholder="Date of Birth" type="text" name="quote[drivers_attributes][{{$index}}][date_of_birth]" id="quote_driver_{{$index}}_date_of_birth" ng-model="driver.date_of_birth">
+        </div>
+        <div class="input">
+          <input class="string required" placeholder="Driver's License #" type="text" name="quote[drivers_attributes][{{$index}}][license_number]" id="quote_driver_{{$index}}_license_number" ng-model="driver.license_number">
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Vehicle Information</legend>
+      <label>Select Number of Vehicles</label>
+      <select ng-model="vehicles_count">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+      <div ng-repeat="vehicle in quote.vehicles">
+        <hr>
+        Vehicle {{ $index + 1 }}
+        <div class="input required">
+          <input class="string required" placeholder="VIN or Year/Make/Model" type="text" name="quote[vehicles_attributes][{{$index}}][vin]" id="quote_vehicle_{{$index}}_vin" ng-model="vehicle.vin">
+        </div>
+        <input class="string required" type="hidden" name="quote[vehicles_attributes][{{$index}}][driver_name]" id="quote_vehicle_{{$index}}_driver_name" ng-value="vehicle.driver_name">
+
+        <div class="input required">
+          <select ng-options="driver_name as driver_name for driver_name in allDriverNames()" ng-model="vehicle.driver_name">
+            <option value="">Primary Driver</option>
+          </select>
+        </div>
+        <div class="input">
+          <select class="" name="quote[vehicles_attributes][{{$index}}][usage]" id="quote_vehicle_{{$index}}_usage" ng-model="vehicle.usage">
+            <option value="">Usage</option>
+            <option value="Work/School Commute">Work/School Commute</option>
+            <option value="Pleasure">Pleasure</option>
+            <option value="Business">Business</option>
+            <option value="Transportation Network">Transportation Network</option>
+          </select>
+        </div>
+        <div class="input">
+          <select class="" name="quote[vehicles_attributes][{{$index}}][approximate_miles_a_day]" id="quote_vehicle_{{$index}}_approximate_miles_a_day" ng-model="vehicle.approximate_miles_a_day">
+            <option value="">Approx. Miles a Day</option>
+            <option value="1-5 Miles">1-5 Miles</option>
+            <option value="6-10 Miles">6-10 Miles</option>
+            <option value="11-15 Miles">11-15 Miles</option>
+            <option value="16-20 Miles">16-20 Miles</option>
+            <option value="25+ Miles">25+ Miles</option>
+            <option value="No Commute">No Commute</option>
+          </select>
+        </div>
+      </div>
+    </fieldset>
+
+    <%= f.input :auto_bodily_injury_per_person, label: false, as: :select, collection: auto_bodily_injury_per_person_collection, prompt: t("simple_form.placeholders.defaults.auto_bodily_injury_per_person") %>
+    <%= f.input :auto_bodily_injury_per_accident, label: false, as: :select, collection: auto_bodily_injury_per_accident_collection, prompt: t("simple_form.placeholders.defaults.auto_bodily_injury_per_accident") %>
+    <%= f.input :auto_property_damage, label: false, as: :select, collection: auto_property_damage_collection, prompt: t("simple_form.placeholders.defaults.auto_property_damage") %>
+    <%= f.input :auto_roadside_assistance, label: false, as: :select, collection: yes_no_collection, prompt: t("simple_form.placeholders.defaults.auto_roadside_assistance") %>
+    <%= f.input :auto_rental_car, label: false, as: :select, collection: ["Reimbursement", "No Reimbursement"], prompt: t("simple_form.placeholders.defaults.auto_rental_car") %>
+    <%= f.input :auto_comprehensive_deductible, label: false, as: :select, collection: auto_comprehensive_deductible_collection, prompt: t("simple_form.placeholders.defaults.auto_comprehensive_deductible") %>
+    <%= f.input :auto_collision_deductible, label: false, as: :select, collection: auto_collision_deductible_collection, prompt: t("simple_form.placeholders.defaults.auto_collision_deductible") %>
+    <div class="input">
+      <input type="hidden" name="quote[auto_discounts]" id="quote_auto_discounts" ng-value="quote.auto_discounts">
+      <select ng-options="discount as discount for discount in allDiscounts" ng-model="selectedDiscounts" class="discount" multiple>
+        <option value="">Discounts (select all that apply)</option>
+      </select>
+    </div>
+    <div ng-if="isCollegeGrad()">
+      <%= f.input :auto_college_graduated_from, label: false %>  
+    </div>
+    <%= f.input :auto_current_occupation, label: false %>
+
+    <%= render "quotes/additional_info_and_final_inputs", f: f %>
+
+    <%= f.button :submit, "Get Quote", class: "" %>
+  <% end %>
+<% end %>

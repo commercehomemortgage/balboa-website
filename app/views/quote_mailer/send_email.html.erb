@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <p><%= @quote.name %> has submitted a <%= @quote.type.underscore.titleize %>. The details are:</p>
+    <ul style="list-style-type: none; line-height: 30px; padding: 0px;">
+      <li><strong>Name: </strong> <%= @quote.name %></li>
+      <li><strong>Email: </strong> <%= @quote.email %></li>
+      <li><strong>Phone: </strong> <%= @quote.phone %></li>
+      <%= render @quote.type.underscore, quote: @quote %>
+      <li><strong>Additional Info: </strong> <%= @quote.additional_info %></li>
+      <li><strong>Interested in Life Insurance as well? </strong> <%= @quote.interested_in_life_insurance %></li>
+    </ul>
+  </body>
+</html>

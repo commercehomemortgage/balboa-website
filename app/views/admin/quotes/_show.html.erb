@@ -1,0 +1,15 @@
+<ul>
+  <li><strong>Type: </strong> <%= quote.type.underscore.titleize %></li>
+  <li><strong>Name: </strong> <%= quote.name %></li>
+  <li><strong>Email: </strong> <%= quote.email %></li>
+  <li><strong>Phone: </strong> <%= quote.phone %></li>
+  <%= render "quote_mailer/#{quote.type.underscore}", quote: quote %>
+  <li><strong>Additional Info: </strong> <%= quote.additional_info %></li>
+  <li><strong>Interested in Life Insurance as well? </strong> <%= quote.interested_in_life_insurance %></li>
+  <% if quote.current_policy.present? %>
+    <li>
+      <strong>Current Policy: </strong>
+      <a target="_blank" href="<%= quote.current_policy.url %>"><%= quote.current_policy.file.filename %></a>
+    </li>
+  <% end %>
+</ul>

@@ -1,0 +1,23 @@
+<li><strong>Date of Birth: </strong> <%= @quote.date_of_birth %></li>
+<li><strong>Street Address: </strong> <%= @quote.street_address %></li>
+<li><strong>Street Address 2: </strong> <%= @quote.street_address2 %></li>
+<li><strong>City: </strong> <%= @quote.city %></li>
+<li><strong>Zip Code: </strong> <%= @quote.zipcode %></li>
+<!-- <li><strong>Type of Home: </strong> <%= @quote.property_type_of_home %></li> -->
+<li><strong>Occupancy Type: </strong> <%= @quote.property_occupancy_type %></li>
+<li><strong>Dogs on Property? </strong> <%= @quote.property_dogs_on_property %></li>
+<li><strong>Pool or Hot Tub? </strong> <%= @quote.property_pool_or_hot_tub %></li>
+<li><strong>College Graduated? </strong> <%= @quote.property_college_graduated %></li>
+<li><strong>College Degree </strong> <%= @quote.property_degree %></li>
+<li><strong>Occupation </strong> <%= @quote.property_occupation %></li>
+
+<li><strong>Number of Additional Insureds: </strong> <%= @quote.additional_insureds.size %></li>
+
+<% @quote.additional_insureds.each_with_index do |additional_insured, i| %>
+<li><strong>Additional Insured #<%= i + 1 %></strong></li>
+  <ul>
+    <li><strong>Name: </strong> <%= additional_insured.name %></li>
+    <li><strong>Birthday: </strong> <%= additional_insured.birthday %></li>
+  </ul>
+</li>
+<% end %>

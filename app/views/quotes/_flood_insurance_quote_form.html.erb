@@ -1,0 +1,27 @@
+<% content_for :quote_form do %>
+  <%= simple_form_for @quote, as: :quote, url: quotes_path do |f| %>
+    <%= f.input :type, as: :hidden %>
+    <%= f.input :first_name, label: false %>
+    <%= f.input :last_name, label: false %>
+    <%= f.input :phone, label: false %>
+    <%= f.input :email, label: false %>
+
+    <fieldset>
+      <legend>Property Address</legend>
+      <%= f.input :street_address, label: false %>
+      <%= f.input :street_address2, label: false %>
+      <%= f.input :city, label: false %>
+      <%= f.input :zipcode, label: false %>
+    </fieldset>
+
+    <fieldset>
+      <legend>Additional Information</legend>
+      <%= f.input :flood_is_primary_home, label: false, as: :select, collection: yes_no_collection, prompt: t("simple_form.placeholders.defaults.flood_is_primary_home") %>
+
+    </fieldset>
+
+    <%= render "quotes/additional_info_and_final_inputs", f: f %>
+
+    <%= f.button :submit, "Get Quote", class: "" %>
+  <% end %>
+<% end %>

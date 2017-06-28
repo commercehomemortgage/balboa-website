@@ -1,0 +1,79 @@
+.image-gradient-dynamic {
+
+  line-height: 0;
+  position: relative;
+  width: 100%;
+  z-index: 99;
+  max-height: 648px;
+  overflow: hidden;
+  margin: 0 auto;
+
+  img {
+    height: auto;
+    left: 0;
+    position: relative;
+    top: 0;
+    width: 100%;
+  }
+
+  .copy {
+    width: 100%;
+    left: 50%;
+    margin: auto;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+
+    h2,
+    h3 {
+      color: white;
+      margin: 0;
+      text-transform: capitalize;
+      letter-spacing: 1px;
+      font-weight: 400;
+    }
+    h3 {
+      display: inline-block;
+      font-weight: 400;
+      position: relative;
+      &:before,
+      &:after {
+        content: '';
+        display: block;
+        width: 37px;
+        height: 2px;
+        background-color: #fff;
+        position: absolute;
+        top: 50%;
+      }
+      &:before {
+        left: -50px;
+      }
+      &:after {
+        right: -50px;
+      }
+    }
+    p {
+      color: white;
+      line-height: 2em;
+      // padding: 0em 2em 1em 2em;
+      font-weight: 100;
+      position: relative;
+    }
+  }
+
+  .overlay {
+    @include position(absolute, 0);
+    // background-color: rgba(0, 80, 106, 0.5);
+    display: block;
+
+    &::after {
+      @include position(absolute, 0);
+      background-color: rgba(0, 80, 106, 0.1);
+      content: "";
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,53 @@
+.wrapper {
+	margin: 0 auto;
+}
+.container{
+	@include pad(25px);
+	// border: 1px solid red;
+	@include outer-container;
+}
+
+
+.shadow {
+    -webkit-box-shadow: 0 0 2px rgba(0,0,0,.12),0 2px 4px rgba(0,0,0,.24);
+    box-shadow: 0 0 2px rgba(0,0,0,.12),0 2px 4px rgba(0,0,0,.24);
+}
+
+.pull_up {
+	background: #fff;
+	position: relative;
+	z-index: 999;
+}
+
+.contact-card {
+	h4 {
+		font-size: 20px;
+		color: $brand-color;
+		margin: 0;
+		font-weight: 400;
+	}
+	a {
+		font-size: 20px;
+		display: block;
+	}
+	p {
+		font-size: 12px;
+		padding: 12px 0px 0 0;
+	}
+}
+
+.list {
+	padding-bottom: 25px;
+	&--dots {
+		list-style-type: disc;
+		list-style-position: outside;
+		margin-left: 0;
+		padding-left: 1.5em;
+	}
+}
+
+
+.db {
+	display: block;
+}
+

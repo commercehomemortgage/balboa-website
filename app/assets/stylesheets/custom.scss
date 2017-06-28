@@ -1,0 +1,79 @@
+.strife-button {
+	padding: 12px;
+	// width: 100%;
+	text-align: center;
+	background-color: $brand-color;
+	color: #fff;
+}
+
+.owl-next,
+.owl-prev {
+	z-index: 9999;
+	@include hide-text;
+	width: 50px;
+	height: 75px;
+	background-size: contain;
+	background-repeat: no-repeat;
+    position: absolute;
+    top: 50%;
+}
+
+.owl-next {
+	background-image: image-url("controls/CTA_Arrow_Right.svg");
+}
+
+.owl-prev {
+	background-image: image-url("controls/CTA_Arrow_Left.svg");
+}
+
+#quote-slider {
+	.owl-prev,
+	.owl-next {
+		transform: translateY(-37.5px);
+	}
+	.owl-next {
+		right: -80px;
+	}
+
+	.owl-prev {
+		left: -80px;
+	}
+}
+
+
+#insurance-slider {
+	.owl-prev,
+	.owl-next {
+		transform: translateY(-50%);
+	}
+	.owl-next {
+		right: 20px;
+	}
+
+	.owl-prev {
+		left: 20px;
+	}
+}
+
+.quote-author {
+	// margin-top: 1;
+	font-size: 14px;
+}
+
+// .whoweare,
+// .quote {
+// 	.copy {
+// 		h3 {
+// 			font-weight: bold !important;
+// 			line-height: 1.2;
+// 		    font-size: 45px;
+// 			&:after,
+// 			&:before {
+// 				display: none;
+// 				span {
+// 					font-weight: 200;
+// 				}
+// 			}
+// 		}
+// 	}
+// }

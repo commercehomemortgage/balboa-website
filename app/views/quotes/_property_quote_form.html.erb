@@ -1,0 +1,44 @@
+<% content_for :quote_form do %>
+  <%= simple_form_for @quote, as: :quote, url: quotes_path, html: { "ng-cloak" => true, "ng-controller" => "PropertyQuoteController", "ng-init" => "init(#{@quote.to_json(include: {additional_insureds: { methods: [:errors] }})})" } do |f| %>
+    <%= f.input :type, as: :hidden %>
+    <%= f.input :name_of_insured, label: false %>
+    <%= f.input :date_of_birth, label: false %>
+    <%= f.input :phone, label: false %>
+    <%= f.input :email, label: false %>
+    <%= f.input :street_address, label: false %>
+    <%= f.input :street_address2, label: false %>
+    <%= f.input :city, label: false %>
+    <%= f.input :zipcode, label: false %>
+    <%= f.input :property_occupancy_type, label: false, as: :select, collection: ["Primary Residence", "Secondary Residence (Vacation Home)", "Tenant Occupied", "Vacation/Short Term Rental", "Vacant/Course of Construction"], prompt: t("simple_form.placeholders.defaults.property_occupancy_type") %>
+    <%= f.input :property_dogs_on_property, label: false, as: :select, collection: yes_no_collection, prompt: t("simple_form.placeholders.defaults.property_dogs_on_property") %>
+    <fieldset>
+      <label>Additional Insureds</label>
+      <select ng-model="additional_insureds_count">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+      </select>
+      <div ng-repeat="additional_insured in quote.additional_insureds">
+        <hr>
+        Additional Insured #{{ $index + 1 }}
+        <div class="input required">
+          <input class="string required" placeholder="Name" type="text" name="quote[additional_insureds_attributes][{{$index}}][name]" id="quote_additional_insured_{{$index}}_name" ng-model="additional_insured.name">
+          <span class="error" ng-show="additional_insured.errors.name">{{ additional_insured.errors.name[0] }}</span>
+        </div>
+        <div class="input required">
+          <input class="string required" placeholder="Birthday" type="text" name="quote[additional_insureds_attributes][{{$index}}][birthday]" id="quote_additional_insured_{{$index}}_birthday" ng-model="additional_insured.birthday">
+          <span class="error" ng-show="additional_insured.errors.birthday">{{ additional_insured.errors.birthday[0] }}</span>
+        </div>
+      </div>
+    </fieldset>
+    <%= f.input :property_college_graduated, label: false, as: :select, collection: yes_no_collection, prompt: t("simple_form.placeholders.defaults.property_college_graduated"), input_html: { "ng-model" => "quote.property_college_graduated" } %>
+    <div ng-show="quote.property_college_graduated == 'Yes'">
+      <%= f.input :property_degree, label: false %>
+      <%= f.input :property_occupation, label: false %>
+    </div>
+
+    <%= render "quotes/additional_info_and_final_inputs", f: f %>
+
+    <%= f.button :submit, "Get Quote", class: "" %>
+  <% end %>
+<% end %>

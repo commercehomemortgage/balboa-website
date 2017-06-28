@@ -1,0 +1,44 @@
+<li><strong>Street Address: </strong> <%= @quote.street_address %></li>
+<li><strong>Street Address 2: </strong> <%= @quote.street_address2 %></li>
+<li><strong>City: </strong> <%= @quote.city %></li>
+<li><strong>Zip Code: </strong> <%= @quote.zipcode %></li>
+
+<li><strong>Current Insurance Carrier: </strong> <%= @quote.auto_current_insurance_carrier %></li>
+<li><strong>Current Insurance Expires: </strong> <%= @quote.auto_current_insurance_expires %></li>
+<li><strong>Number of Drivers: </strong> <%= @quote.drivers.size %></li>
+
+<% @quote.drivers.each_with_index do |driver, i| %>
+<li><strong>Driver #<%= i + 1 %></strong></li>
+  <ul>
+    <li><strong>First Name: </strong> <%= driver.first_name %></li>
+    <li><strong>Last Name: </strong> <%= driver.last_name %></li>
+    <li><strong>Gender: </strong> <%= driver.gender %></li>
+    <li><strong>Martial Status: </strong> <%= driver.marital_status %></li>
+    <li><strong>Date of Birth: </strong> <%= driver.date_of_birth %></li>
+    <li><strong>License #: </strong> <%= driver.license_number %></li>
+  </ul>
+</li>
+<% end %>
+
+<li><strong>Number of Vehicles: </strong> <%= @quote.vehicles.size %></li>
+<% @quote.vehicles.each_with_index do |vehicle, i| %>
+<li><strong>Vehicle #<%= i + 1 %></strong></li>
+  <ul>
+    <li><strong>VIN # or Year/Make/Model: </strong> <%= vehicle.vin %></li>
+    <li><strong>Primary Driver: </strong> <%= vehicle.driver_name %></li>
+    <li><strong>Usage: </strong> <%= vehicle.usage %></li>
+    <li><strong>Aprox Miles A Day: </strong> <%= vehicle.approximate_miles_a_day %></li>
+  </ul>
+</li>
+<% end %>
+
+<li><strong>Bodily Injury (Per Person): </strong> <%= @quote.auto_bodily_injury_per_person %></li>
+<li><strong>Bodily Injury (Per Accident): </strong> <%= @quote.auto_bodily_injury_per_accident %></li>
+<li><strong>Property Damage: </strong> <%= @quote.auto_property_damage %></li>
+<li><strong>Roadside Assistance: </strong> <%= @quote.auto_roadside_assistance %></li>
+<li><strong>Rental Car: </strong> <%= @quote.auto_rental_car %></li>
+<li><strong>Comprehensive Deductible: </strong> <%= @quote.auto_comprehensive_deductible %></li>
+<li><strong>Collision Deductible: </strong> <%= @quote.auto_collision_deductible %></li>
+<li><strong>Discounts: </strong> <%= @quote.auto_discounts %></li>
+<li><strong>College Graduated From: </strong> <%= @quote.auto_college_graduated_from %></li>
+<li><strong>Occupation: </strong> <%= @quote.auto_current_occupation %></li>

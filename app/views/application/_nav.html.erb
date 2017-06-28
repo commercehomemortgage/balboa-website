@@ -1,0 +1,61 @@
+<header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+   <a href="/" class="logo">
+      <%= image_tag "navigation/color_logo.svg" %>
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">MENU</a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+        <li class="nav-link">
+          <%= link_to "Who We Are", whoweare_path %>
+        </li>
+        <li class="nav-link phone-nav">
+          <%= phone_number_link("(888) 722-6411") %>
+        </li>
+        <li id="js-navigation-more" class="nav-link more"><a href="javascript:void(0)">What We Cover</a>
+          <ul class="submenu">
+              <li class="small-nav">
+                <%= link_to "Property", insurance_path %>
+              </li>
+              <li class="small-nav"> 
+                <%= link_to "Auto", insurance_auto_path %>
+              </li>
+              <li class="small-nav">
+                <%= link_to "Commercial", insurance_commercial_path %>
+              </li>
+              <li class="small-nav">
+                <%= link_to "Life", insurance_life_path %>
+              </li>
+              <li class="small-nav">
+                <%= link_to "Health", insurance_health_path %>
+              </li>
+              <li class="small-nav">
+                <%= link_to "Motorcycle", insurance_motorcycle_path %>
+              </li>
+              <li class="small-nav">
+                <%= link_to "Flood", insurance_flood_path %>
+              </li>
+              <li class="small-nav">
+                <%= link_to "Boat & Watercraft", insurance_boat_path %>
+              </li>
+              <li class="small-nav">
+                <%= link_to "Condo", insurance_condo_path%>
+              </li>
+              <li class="small-nav">
+                <%= link_to "Landlord", insurance_landlord_path %>
+              </li>
+              <li class="small-nav">
+                <%= link_to "Renters", insurance_renters_path %>     
+              </li>
+              <li class="small-nav">
+                <%= link_to "Jewelry", insurance_jewelry_path %>
+              </li>
+          </ul>
+        </li>
+        <li class="nav-link">
+          <%= link_to "Get A Quote", quote_path %>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>

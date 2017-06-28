@@ -1,0 +1,10 @@
+<li><strong>Number of Valuable Items: </strong> <%= @quote.valuable_items.size %></li>
+
+<% @quote.valuable_items.each_with_index do |valuable_item, i| %>
+<li><strong>Item #<%= i + 1 %></strong></li>
+  <ul>
+    <li><strong>Zip Code: </strong> <%= valuable_item.zip_code %></li>
+    <li><strong>Estimated Value: </strong> <%= valuable_item.estimated_value %></li>
+  </ul>
+</li>
+<% end %>

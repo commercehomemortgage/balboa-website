@@ -1,0 +1,50 @@
+//hero
+$image-gradient-color-top: $brand-color;
+$transparency-top: 0.9;
+$image-gradient-color-bottom: $brand-color;
+$transparency-bottom: 0.6;
+$vertical-angle: 0deg;
+$image-gradient-color-left: $brand-color;
+$transparency-left: 0.8;
+$image-gradient-color-right: $brand-color;
+$transparency-right: 0.8;
+$horizontal-angle: 90deg;
+
+
+// nav
+$base-border-color: gainsboro !default;
+$base-border-radius: 3px !default;
+$action-color: #477DCA !default;
+$dark-gray: #333 !default;
+$large-screen: 60em !default;
+
+
+$navigation-padding: 1em;
+$navigation-background: #0C2C37;
+$navigation-color: white;
+$navigation-color-hover: white;
+$navigation-height: 110px;
+$navigation-height-sm: 80px;
+$navigation-nav-button-background: $action-color;
+$navigation-nav-button-background-hover: lighten($navigation-background, 10%);
+$navigation-nav-button-border: 1px solid lighten($navigation-nav-button-background, 20%);
+$navigation-search-background: lighten($navigation-background, 5);
+$navigation-search-border: 1px solid darken($navigation-background, 5);
+$navigation-active-link-color: transparentize(white, 0.5);
+$navigation-submenu-padding: 25px;
+$navigation-submenu-width: 12em;
+
+$horizontal-bar-mode: $large-screen;
+
+
+//Footer
+
+$footer-background: $brand-color;
+$footer-color: $brand-color;
+$footer-link-color: transparentize($footer-color, 0.6);
+$footer-disclaimer-color: transparentize($footer-color, 0.6);
+
+//fonts
+
+$styled-font: "acta-display",sans-serif;
+$sans-serif: "open-sans",sans-serif;

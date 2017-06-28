@@ -1,0 +1,36 @@
+<% content_for :quote_form do %>
+
+  <%= simple_form_for @quote, as: :quote, url: quotes_path do |f| %>
+    <%= f.input :type, as: :hidden %>
+    <%= f.input :first_name, label: false %>
+    <%= f.input :last_name, label: false %>
+    <%= f.input :street_address, label: false %>
+    <%= f.input :street_address2, label: false %>
+    <%= f.input :city, label: false %>
+    <%= f.input :zipcode, label: false %>
+    <%= f.input :phone, label: false %>
+    <%= f.input :email, label: false %>
+
+    <fieldset>
+      <legend>Additional Information</legend>
+      <%= f.input :date_of_birth, label: false %>
+      <%= f.input :gender, label: false, as: :select, collection: gender_collection, prompt: t("simple_form.placeholders.defaults.gender") %>
+      <%= f.input :height, label: false %>
+      <%= f.input :weight, label: false %>
+      <%= f.input :life_tobacco_used, label: false, as: :select, collection: yes_no_collection, prompt: t("simple_form.placeholders.defaults.life_tobacco_used") %>
+
+    </fieldset>
+
+    <fieldset>
+      <legend>Type of Insurance</legend>
+      <%= f.input :life_term, label: false %>
+      <%= f.input :life_coverage_amount, label: false %>
+    </fieldset>
+
+    <%= f.input :additional_info, label: false %>
+    <%= f.input :current_policy %>
+    <%= f.hidden_field :current_policy_cache %>
+
+    <%= f.button :submit, "Get Quote", class: "" %>
+  <% end %>
+<% end %>

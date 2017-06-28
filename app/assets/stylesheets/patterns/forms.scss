@@ -1,0 +1,155 @@
+.forms,
+.sidebar--form {
+  textarea,
+  select,
+  input {
+    background-color: #f8f8f8;
+    border: 1px solid #939393;
+    border-radius: 0;
+    color: #939393;
+    font-size: 11px;
+    margin-bottom: 15px;
+    width: 100%;
+    @include pad(10px);
+  }
+  select {
+    border-radius: 0;
+    background: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: image-url("controls/CTA_Arrow_Down.png") no-repeat #f8f8f8;
+    background-size: 16px 9px;
+    background-position: 98% center;
+  } 
+  /*target Internet Explorer 9 and Internet Explorer 10:*/
+  @media screen and (min-width:0\0) { 
+      select {
+          background:none;
+          padding: 5px;
+      }
+  }
+  fieldset {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    label {
+      font-size: 12px;
+      color: #696969;
+      font-weight: 200;
+    }
+  }
+  .quote_commercial_type_of_insurance select{
+    height: 168px;
+    padding: 10px;
+    overflow: hidden;
+    background-position: 95% 15px;
+    &:first-child {
+      border: 1px solid red;
+    }
+  }
+  .btn {
+    font-weight: 100;
+    background-color: #01506a;
+    color: #fff;
+    width: 180px;
+    text-align: center;
+    font-size: 21px;
+    line-height: 44px;
+    padding: 0;
+    border: 0;
+    float: left;
+  }
+}
+
+.quotes {
+  .forms {
+    margin-top: 3em;
+  }
+}
+
+// .input {
+//   @include clearfix;
+// }
+
+div.file {
+  position: relative;
+}
+label.file {
+    position: absolute;
+    width: 100%;
+    line-height: 43px;
+    padding-left: 50px;
+    background-color: #f8f8f8;
+    border: 1px solid #939393;
+    color: #999;
+    display: inline-block;
+    font-size: 14px;
+    background-image: image-url('controls/upload-icon.png');
+    background-repeat: no-repeat;
+    background-position: 15px center;
+}
+
+#quoteType {
+  color: #000;
+  font-size: 30px;
+  font-weight: lighter;
+  border: 0;
+  background-color: transparent;
+  -webkit-appearance: none;
+  appearance: none;
+  background-size: 22px;
+  display: inline-block;
+  // height: 40px;
+  background-image: image-url('controls/CTA-Chevron-Right.png');
+  background-repeat: no-repeat;
+  background-position: right center;
+  // width: 100%;
+  &:focus {
+    border: 0;
+    outline: none;
+  }
+}
+
+// .quote-type-wrapper {
+//     &:after {
+//     content: '';
+//     display: inline-block;
+//     width: 30px;
+//     height: 40px;
+//     background-image: image-url('controls/CTA-Chevron-Right.svg');
+//     background-repeat: no-repeat;
+//     background-position: center center;
+//   }
+// }
+
+#quoteType::-ms-expand {  display: none; }
+
+
+
+
+
+
+
+// SELECT 2
+
+// .select2-container,
+// .select2-container--default,
+// .select2-selection--single{
+//   border: 0 !important;
+//   background-color: transparent !important;
+// }
+
+// .select2-selection__rendered {
+//   color: #fff !important;
+//   // color: red !important;
+//   font-size: 30px !important;
+//   font-weight: lighter !important;
+// }
+
+// .select2-container--default,
+// .select2-selection--single,
+// .select2-selection__arrow b{
+//   border-color: #fff transparent transparent transparent !important;
+// }

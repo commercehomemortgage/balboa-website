@@ -1,0 +1,112 @@
+en:
+  simple_form:
+    "yes": 'Yes'
+    "no": 'No'
+    required:
+      text: 'required'
+      mark: '*'
+      # You can uncomment the line below if you need to overwrite the whole required html.
+      # When using html, text and mark won't be used.
+      # html: '<abbr title="required">*</abbr>'
+    error_notification:
+      default_message: "Please review the problems below:"
+    # Examples
+    # labels:
+    #   defaults:
+    #     password: 'Password'
+    #   user:
+    #     new:
+    #       email: 'E-mail to sign in.'
+    #     edit:
+    #       email: 'E-mail.'
+    # hints:
+    #   defaults:
+    #     username: 'User name to sign in.'
+    #     password: 'No special characters, please.'
+    # include_blanks:
+    #   defaults:
+    #     age: 'Rather not say'
+    # prompts:
+    #   defaults:
+    #     age: 'Select your age'
+    placeholders:
+      defaults:
+        name_of_insured: Name of Insured
+        first_name: First Name
+        last_name: Last Name
+        date_of_birth: Date of Birth
+        phone: Phone Number
+        email: Email
+        street_address: Street Address
+        street_address2: Address Line 2
+        city: City
+        zipcode: Zip Code
+        additional_info: Additional Info
+        interested_in_life_insurance: "Interested in Life Insurance as well?"
+        current_policy: Upload Current Coverage (optional)
+        property_type_of_home: Type of Home
+        property_occupancy_type: Occupancy Type
+        property_dogs_on_property: Dogs on Property?
+        property_pool_or_hot_tub: Pool or Hot Tub?
+        property_college_graduated: College Graduated?
+        property_degree: Degree
+        property_occupation: Occupation
+
+        auto_current_insurance_carrier: Current Carrier
+        auto_current_insurance_expires: Expires
+        auto_bodily_injury_per_person: Bodily Injury (Per Person)
+        auto_bodily_injury_per_accident: Bodily Injury (Per Accident)
+        auto_property_damage: Property Damage
+        auto_roadside_assistance: Roadside Assistance
+        auto_rental_car: Rental Car
+        auto_comprehensive_deductible: Comprehensive Deductible
+        auto_collision_deductible: Collision Deductible
+        auto_college_graduated_from: College Graduated From
+        auto_current_occupation: Occupation
+
+        commercial_business_type: Business Type
+
+        gender: Gender
+        height: Height
+        weight: Weight
+        life_tobacco_used: Tobacco Used
+        life_term: Term
+        life_coverage_amount: Coverage Amount
+
+        health_self_employed: Are you self-employed?
+        health_expected_annual_household_income: Expected Annual Household Income
+        health_number_of_people_in_household: Number of People in your Household
+        health_anyone_have_major_health_conditions: Does anyone have major health conditions?
+        health_major_life_event_in_past_thirty_days: Major life event in the past 30 days?
+
+        flood_type_of_home: Type of Home
+        flood_is_home_over_water: Is your home over water?
+        flood_building_purpose: Building Purpose
+        flood_is_primary_home: Primary Home?
+
+        boat_year: Year
+        boat_make: Make
+        boat_model: Model
+        boat_year_purchased: Year Purchased
+        boat_location_zipcode: Location Zip Code
+        boat_usage: Watercraft Use
+
+        condo_number_of_units: Number of Units
+        condo_exterior_siding: Exterior Siding
+        condo_within_five_minutes_of_fire_stations: Within 5 miles of fire station
+        condo_within_one_thousand_feet_of_fire_hydrant: Within 1000 ft of a fire hydrant
+        condo_property_usage: How will you be using the property?
+        condo_own_dogs: Do you own any dogs?
+        condo_number_of_full_time_employees: Number of full-time condo employees
+        condo_number_of_people_living_in_unit: Number of people living in your unit?
+        condo_are_any_policy_holders_retired: Are any policy holders retired?
+
+        renter_number_of_units: Number of Units in your bulding
+        renter_personal_property_coverage: Personal Propery Coverage
+        renter_own_dogs: Do you own any dogs?
+        renter_number_of_people_living_in_unit: Number of people living in your unit?
+        renter_number_of_full_time_employees: How many full-time employees live in your unit?
+        render_are_any_policy_holders_retired: Are any policy holders retired?
+
+        jewelry_estimated_value: Estimated Value
+        jewelry_zip_code: Enter Zip Code where located

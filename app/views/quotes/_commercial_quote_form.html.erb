@@ -1,0 +1,25 @@
+<% content_for :quote_form do %>
+  <%= simple_form_for @quote, as: :quote, url: quotes_path, html: { "ng-cloak" => true, "ng-controller" => "CommercialQuoteController", "ng-init" => "init(#{@quote.to_json})" } do |f| %>
+    <%= f.input :type, as: :hidden %>
+    <%= f.input :first_name, label: false %>
+    <%= f.input :last_name, label: false %>
+    <%= f.input :street_address, label: false %>
+    <%= f.input :street_address2, label: false %>
+    <%= f.input :city, label: false %>
+    <%= f.input :zipcode, label: false %>
+    <%= f.input :phone, label: false %>
+    <%= f.input :email, label: false %>
+
+    <%= f.input :commercial_business_type, label: false %>
+    <div class="input">
+      <input type="hidden" name="quote[commercial_type_of_insurance]" id="quote_commercial_type_of_insurance" ng-value="quote.commercial_type_of_insurance">
+      <select ng-options="insuranceType as insuranceType for insuranceType in insuranceTypes" ng-model="selectedInsuranceTypes" class="quote_commercial_type_of_insurance" multiple>
+        <option value="">Type of Insurance (Select all that apply)</option>
+      </select>
+    </div>
+
+    <%= render "quotes/additional_info_and_final_inputs", f: f %>
+
+    <%= f.button :submit, "Get Quote", class: "" %>
+  <% end %>
+<% end %>

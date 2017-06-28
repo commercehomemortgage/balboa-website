@@ -1,0 +1,2 @@
+class WhoweareController < ApplicationController
+end

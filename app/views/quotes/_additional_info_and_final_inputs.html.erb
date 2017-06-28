@@ -1,0 +1,4 @@
+<%= f.input :additional_info, label: false %>
+<%= f.input :current_policy %>
+<%= f.hidden_field :current_policy_cache %>
+<%= f.input :interested_in_life_insurance, label: false, as: :select, collection: ["Yes", "No", "Possibly (Would like to learn more)"], prompt: t("simple_form.placeholders.defaults.interested_in_life_insurance") %>
